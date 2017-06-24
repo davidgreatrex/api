@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule    ^api/(.*)$    api.php?request=$1    [NC,L]
