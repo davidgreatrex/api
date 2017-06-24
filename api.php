@@ -1,11 +1,18 @@
 <?php
 
+/**
+ * Autoloads the classes that are required from the classes folder
+ * @param string $classname The name of the class to load
+ */
 function __autoload($classname) {
 	if (file_exists("classes/{$classname}.inc.php")) {
 		require "classes/{$classname}.inc.php";
 	}
 }
 
+/**
+ * Add valid routes that can be used with the api
+ */
 Router::set('users', function() {
 	return new Users();
 });
@@ -25,6 +32,10 @@ Router::set('user/delete', function() {
 Router::set('user/get', function() {
 	return new UserGet();
 });
+
+/**
+ * Add more routes here...
+ */
 
 try {
 	/**
