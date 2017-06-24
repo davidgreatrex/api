@@ -12,7 +12,7 @@ class UserUpdate extends API implements APIInterface {
 	
 	public function arguments() {
 		return array(
-			array('filter'=>FILTER_SANITIZE_NUMBER_INT)
+			0 => array('filter'=>FILTER_SANITIZE_NUMBER_INT)
 		);
 	}
 	
