@@ -40,6 +40,19 @@ class Router {
 	 * @var array
 	 */
 	public static $_arguments = [];
+	
+	/**
+	 * The data that was send in the api request
+	 * @var array
+	 */
+	public static $_data = [];
+	
+	/**
+	 * Store the data from the request to be used later on
+	 */
+	public static function data() {
+		self::$_data = json_decode(file_get_contents("php://input"), true);
+	}
 
 	/**
 	 * Add a path that can be used by the api

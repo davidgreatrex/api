@@ -17,6 +17,10 @@ class UserUpdate extends API implements APIInterface {
 	}
 	
 	public function process($id) {
+		/**
+		 * The data submitted in the request
+		 */
+		$data = Router::$_data;
 		
 	}
 }

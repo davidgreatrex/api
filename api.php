@@ -39,6 +39,11 @@ Router::set('user/get', function() {
 
 try {
 	/**
+	 * Set the data that was sent in the request so it can be used later
+	 */
+	Router::data();
+	
+	/**
 	 * Find the handler for this request
 	 */
 	Router::get();

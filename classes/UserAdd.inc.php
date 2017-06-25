@@ -15,6 +15,10 @@ class UserAdd extends API implements APIInterface {
 	}
 	
 	public function process() {
+		/**
+		 * The data submitted in the request
+		 */
+		$data = Router::$_data;
 		
 	}
 }
