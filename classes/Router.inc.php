@@ -124,6 +124,10 @@ class Router {
 	 */
 	public static function response($data, $code = 200) {
 		$status = new StatusCode($code);
+		
+		if (!$status->exists()) {
+			throw new Router_Exception("Invalid HTTP response status code");
+		}
 
 		header('Content-Type: application/json');
 		header("HTTP/1.1 {$status->code} {$status->message}");
