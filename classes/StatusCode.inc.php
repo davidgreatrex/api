@@ -1,11 +1,26 @@
 <?php
 
+/**
+ * This class handles the HTTP status codes and messages used in the api response.
+ */
 class StatusCode {
 	
+	/**
+	 * The HTTP status code that is passed into the constructor when the object is created.
+	 * @var int 
+	 */
 	public $code = 0;
 	
+	/**
+	 * The HTTP status message that is used in the HTTP status response header
+	 * @var string
+	 */
 	public $message = null;
 	
+	/**
+	 * A valid list of HTTP status codes and their associated messages
+	 * @var array
+	 */
 	private $_codes = [
 		100 => 'Continue',
 		101 => 'Switching Protocols',
@@ -64,10 +79,18 @@ class StatusCode {
 		510 => 'Not Extended'
 	];
 	
+	/**
+	 * Create the StatusCode object using a valid HTTP status code
+	 * @param int $code
+	 */
 	public function __construct($code) {
-		$this->code = $code;
+		$this->code = intval($code);
 	}
 	
+	/**
+	 * Checks to see that the HTTP status code actually exists in the list of valid codes
+	 * @return bool Returns <b>True</b> if the code exists, otherwise <b>False</b> is returned
+	 */
 	public function exists() {
 		return array_key_exists($this->code, $this->_codes);
 	}
