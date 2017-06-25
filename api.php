@@ -59,7 +59,7 @@ try {
 	Router::process();
 	
 } catch (Router_Exception $ex) {
-	Router::response($ex->getMessage(), 400, "Bad Request");
+	Router::response($ex->getMessage(), 400);
 } catch (Exception $ex) {
-	Router::response($ex->getMessage(), 400, "Bad Request");
+	Router::response($ex->getMessage(), 400);
 }
