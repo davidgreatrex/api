@@ -20,5 +20,8 @@ class UserAdd extends API implements APIInterface {
 		 */
 		$data = Router::$_data;
 		
+		/**
+		 * Add functionality to add a user
+		 */
 	}
 }

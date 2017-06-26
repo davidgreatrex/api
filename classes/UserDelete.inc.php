@@ -17,6 +17,8 @@ class UserDelete extends API implements APIInterface {
 	}
 	
 	public function process($id) {
-		
+		/**
+		 * Add functionality to delete a user by it's id
+		 */
 	}
 }

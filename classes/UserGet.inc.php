@@ -21,6 +21,10 @@ class UserGet extends API implements APIInterface {
 			'id' => $id,
 			'username' => "test.user"
 		];
+		
+		/**
+		 * Add functionality to get a user by it's id
+		 */
 			
 		return $data;
 	}
