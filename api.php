@@ -15,6 +15,11 @@ function __autoload($classname) {
 	}
 }
 
+if (!CONFIG_ENABLE) {
+	Router::response("", 404);
+	exit;
+}
+
 /**
  * Add valid routes that can be used with the api
  */
