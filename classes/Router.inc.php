@@ -40,6 +40,19 @@ class Router {
 	 * @var array
 	 */
 	private static $_arguments = [];
+	
+	/**
+	 * The data that was send in the api request
+	 * @var array
+	 */
+	public static $_data = [];
+	
+	/**
+	 * Store the data from the request to be used later on
+	 */
+	public static function data() {
+		self::$_data = json_decode(file_get_contents("php://input"), true);
+	}
 
 	/**
 	 * Add a path that can be used by the api
@@ -124,6 +137,10 @@ class Router {
 	 */
 	public static function response($data, $code = 200) {
 		$status = new StatusCode($code);
+		
+		if (!$status->exists()) {
+			throw new Router_Exception("Invalid HTTP response status code");
+		}
 
 		header('Content-Type: application/json');
 		header("HTTP/1.1 {$status->code} {$status->message}");
