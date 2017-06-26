@@ -9,37 +9,37 @@ class Router {
 	 * The handler to use with the request
 	 * @var APIInterface
 	 */
-	public static $_active = null;
+	private static $_active = null;
 
 	/**
 	 * The routes that are loaded into the class that are available to use in the api
 	 * @var array
 	 */
-	public static $_routes = [];
+	private static $_routes = [];
 
 	/**
 	 * The path of the incoming api request
 	 * @var string
 	 */
-	public static $_path = null;
+	private static $_path = null;
 
 	/**
 	 * The noun to identify the target resorce
 	 * @var string
 	 */
-	public static $_noun = null;
+	private static $_noun = null;
 
 	/**
 	 * The verb to identify the action to take on the noun
 	 * @var string 
 	 */
-	public static $_verb = null;
+	private static $_verb = null;
 
 	/**
 	 * The arguments to pass to the handler that process the request
 	 * @var array
 	 */
-	public static $_arguments = [];
+	private static $_arguments = [];
 
 	/**
 	 * Add a path that can be used by the api
