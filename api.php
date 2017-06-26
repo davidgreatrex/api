@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Include the api config options
+ */
+require 'config.inc.php';
+
+/**
  * Autoloads the classes that are required from the classes folder
  * @param string $classname The name of the class to load
  */
@@ -42,7 +47,7 @@ try {
 	 */
 	$secure = filter_has_var(INPUT_SERVER, 'HTTPS');
 
-	if (!$secure) {
+	if (!$secure && CONFIG_FORCE_SECURE) {
 		Router::response("Please connect using an HTTPS connection", 403);
 		exit;
 	}
