@@ -38,6 +38,16 @@ Router::set('user/get', function() {
  */
 
 try {
+  /**
+   * force connections over https
+   */
+  $secure = filter_has_var(INPUT_SERVER, 'HTTPS');
+  
+  if (!$secure) {
+    Router::response("Please connect using an HTTPS connection", 403);
+    exit;
+  }
+
 	/**
 	 * Set the data that was sent in the request so it can be used later
 	 */
