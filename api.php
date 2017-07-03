@@ -50,9 +50,7 @@ try {
 	/**
 	 * force connections over https
 	 */
-	$secure = filter_has_var(INPUT_SERVER, 'HTTPS');
-
-	if (!$secure && CONFIG_FORCE_SECURE) {
+	if (!filter_has_var(INPUT_SERVER, 'HTTPS') && CONFIG_FORCE_SECURE) {
 		Router::response("Please connect using an HTTPS connection", 403);
 		exit;
 	}
