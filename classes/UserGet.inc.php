@@ -19,7 +19,7 @@ class UserGet extends API implements APIInterface {
 	public function process($id) {
 		$data = [
 			'id' => $id,
-			'username' => "test.user"
+			'username' => "test.user.1"
 		];
 		
 		/**
