@@ -2,7 +2,7 @@
 ./sass/sass-cache
 
 # Ignore CSS files, they are generate on each server.
-./css
+./css/*
 
 # Ignore log files
 *.log
